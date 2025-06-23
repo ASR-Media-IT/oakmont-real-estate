@@ -1,0 +1,106 @@
+{
+  "id": "call_to_action_with_image",
+  "type": "SharedSlice",
+  "name": "CallToActionWithImage",
+  "description": "CallToActionWithImage",
+  "variations": [
+    {
+      "id": "default",
+      "name": "Default",
+      "docURL": "...",
+      "version": "initial",
+      "description": "Default",
+      "imageUrl": "",
+      "primary": {
+        "title": {
+          "type": "Text",
+          "config": {
+            "label": "Title",
+            "placeholder": ""
+          }
+        },
+        "body": {
+          "type": "Text",
+          "config": {
+            "label": "Body",
+            "placeholder": ""
+          }
+        },
+        "image": {
+          "type": "Image",
+          "config": {
+            "label": "Image",
+            "constraint": {},
+            "thumbnails": []
+          }
+        }
+      },
+      "items": {
+        "cta_title": {
+          "type": "Text",
+          "config": {
+            "label": "CTA Title",
+            "placeholder": ""
+          }
+        },
+        "cta_url": {
+          "type": "Link",
+          "config": {
+            "label": "CTA URL",
+            "placeholder": "",
+            "select": null
+          }
+        }
+      }
+    },
+    {
+      "id": "flipped",
+      "name": "Flipped",
+      "docURL": "...",
+      "version": "initial",
+      "description": "Default",
+      "imageUrl": "",
+      "primary": {
+        "title": {
+          "type": "Text",
+          "config": {
+            "label": "Title",
+            "placeholder": ""
+          }
+        },
+        "body": {
+          "type": "Text",
+          "config": {
+            "label": "Body",
+            "placeholder": ""
+          }
+        },
+        "image": {
+          "type": "Image",
+          "config": {
+            "label": "Image",
+            "constraint": {},
+            "thumbnails": []
+          }
+        }
+      },
+      "items": {
+        "cta_title": {
+          "type": "Text",
+          "config": {
+            "label": "CTA Title",
+            "placeholder": ""
+          }
+        },
+        "cta_url": {
+          "type": "Link",
+          "config": {
+            "label": "CTA URL",
+            "placeholder": "",
+            "select": null
+          }
+        }
+      }
+    }
+  ]
+}
