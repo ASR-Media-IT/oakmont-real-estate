@@ -1,0 +1,59 @@
+[
+	{
+		"__TYPE__": "SharedSliceContent",
+		"variation": "default",
+		"primary": {
+			"header": {
+				"__TYPE__": "FieldContent",
+				"value": "happily",
+				"type": "Text"
+			},
+			"subheader": {
+				"__TYPE__": "FieldContent",
+				"value": "hello",
+				"type": "Text"
+			},
+			"primary_cta": {
+				"key": "90504089-11d7-44ef-bf8a-cb579be81031",
+				"__TYPE__": "LinkContent",
+				"value": {
+					"__TYPE__": "ExternalLink",
+					"url": "http://google.com",
+					"text": "electricity"
+				}
+			},
+			"secondary_cta": {
+				"key": "753235bc-3e67-42eb-8f42-e8de1cbf6def",
+				"__TYPE__": "LinkContent",
+				"value": {
+					"__TYPE__": "ExternalLink",
+					"url": "https://prismic.io",
+					"text": "aside"
+				}
+			},
+			"background_image": {
+				"__TYPE__": "ImageContent",
+				"origin": {
+					"id": "main",
+					"url": "https://images.unsplash.com/photo-1560762484-813fc97650a0",
+					"width": 3344,
+					"height": 2509
+				},
+				"url": "https://images.unsplash.com/photo-1560762484-813fc97650a0",
+				"width": 3344,
+				"height": 2509,
+				"edit": {
+					"zoom": 1,
+					"crop": {
+						"x": 0,
+						"y": 0
+					},
+					"background": "transparent"
+				},
+				"alt": "handle",
+				"thumbnails": {}
+			}
+		},
+		"items": []
+	}
+]
