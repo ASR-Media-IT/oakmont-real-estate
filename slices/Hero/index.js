@@ -1,9 +1,12 @@
 "use client";
 import { Container } from "@/components/atoms";
 import { PrismicNextLink, PrismicNextImage } from "@prismicio/next";
+import { useParallax } from "@/hooks";
 
 const Hero = ({ slice }) => {
   const bgImage = slice.primary.background_image?.url;
+    // initialize the parallax effect
+    useParallax(.5)
 
   return (
     <div

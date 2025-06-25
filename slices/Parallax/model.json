@@ -1,0 +1,105 @@
+{
+  "id": "page_header",
+  "type": "SharedSlice",
+  "name": "Parallax",
+  "description": "PageHeader",
+  "variations": [
+    {
+      "id": "default",
+      "name": "Default",
+      "docURL": "...",
+      "version": "initial",
+      "description": "Default",
+      "imageUrl": "",
+      "primary": {
+        "title": {
+          "type": "Text",
+          "config": {
+            "label": "Title",
+            "placeholder": ""
+          }
+        },
+        "body": {
+          "type": "Text",
+          "config": {
+            "label": "Body",
+            "placeholder": ""
+          }
+        },
+        "background_image": {
+          "type": "Image",
+          "config": {
+            "label": "Background Image",
+            "constraint": {},
+            "thumbnails": []
+          }
+        },
+        "primary_cta": {
+          "type": "Link",
+          "config": {
+            "label": "Primary CTA",
+            "placeholder": "",
+            "select": null,
+            "allowTargetBlank": true,
+            "allowText": true,
+            "repeat": false,
+            "variants": [
+              "Primary",
+              "Secondary",
+              "Primary Outline",
+              "Primary White Outline",
+              "Link",
+              "Link White"
+            ]
+          }
+        },
+        "secondary_cta": {
+          "type": "Link",
+          "config": {
+            "label": "Secondary CTA",
+            "placeholder": "",
+            "select": null,
+            "allowTargetBlank": true,
+            "allowText": true,
+            "repeat": false,
+            "variants": [
+              "Primary",
+              "Secondary",
+              "Primary Outline",
+              "Primary White Outline",
+              "Link",
+              "Link White"
+            ]
+          }
+        },
+        "overlay_color": {
+          "type": "Color",
+          "config": {
+            "label": "Overlay Color",
+            "placeholder": ""
+          }
+        },
+        "overlay_opacity": {
+          "type": "Select",
+          "config": {
+            "label": "Overlay Opacity",
+            "placeholder": "",
+            "options": [
+              "100",
+              "90",
+              "80",
+              "70",
+              "60",
+              "50",
+              "40",
+              "30",
+              "20",
+              "10"
+            ]
+          }
+        }
+      },
+      "items": {}
+    }
+  ]
+}

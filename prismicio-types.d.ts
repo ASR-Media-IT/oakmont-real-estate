@@ -106,7 +106,10 @@ export type FooterMenuDocument<Lang extends string = string> =
     Lang
   >;
 
-type HomePageDocumentDataSlicesSlice = HeroSlice | CallToActionWithImageSlice;
+type HomePageDocumentDataSlicesSlice =
+  | PageHeaderSlice
+  | HeroSlice
+  | CallToActionWithImageSlice;
 
 /**
  * Content for Home Page documents
@@ -628,6 +631,135 @@ type HeroSliceVariation = HeroSliceDefault;
  */
 export type HeroSlice = prismic.SharedSlice<"hero", HeroSliceVariation>;
 
+/**
+ * Primary content in *Parallax → Default → Primary*
+ */
+export interface PageHeaderSliceDefaultPrimary {
+  /**
+   * Title field in *Parallax → Default → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: page_header.default.primary.title
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  title: prismic.KeyTextField;
+
+  /**
+   * Body field in *Parallax → Default → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: page_header.default.primary.body
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  body: prismic.KeyTextField;
+
+  /**
+   * Background Image field in *Parallax → Default → Primary*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: page_header.default.primary.background_image
+   * - **Documentation**: https://prismic.io/docs/field#image
+   */
+  background_image: prismic.ImageField<never>;
+
+  /**
+   * Primary CTA field in *Parallax → Default → Primary*
+   *
+   * - **Field Type**: Link
+   * - **Placeholder**: *None*
+   * - **API ID Path**: page_header.default.primary.primary_cta
+   * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
+   */
+  primary_cta: prismic.LinkField<
+    string,
+    string,
+    unknown,
+    prismic.FieldState,
+    | "Primary"
+    | "Secondary"
+    | "Primary Outline"
+    | "Primary White Outline"
+    | "Link"
+    | "Link White"
+  >;
+
+  /**
+   * Secondary CTA field in *Parallax → Default → Primary*
+   *
+   * - **Field Type**: Link
+   * - **Placeholder**: *None*
+   * - **API ID Path**: page_header.default.primary.secondary_cta
+   * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
+   */
+  secondary_cta: prismic.LinkField<
+    string,
+    string,
+    unknown,
+    prismic.FieldState,
+    | "Primary"
+    | "Secondary"
+    | "Primary Outline"
+    | "Primary White Outline"
+    | "Link"
+    | "Link White"
+  >;
+
+  /**
+   * Overlay Color field in *Parallax → Default → Primary*
+   *
+   * - **Field Type**: Color
+   * - **Placeholder**: *None*
+   * - **API ID Path**: page_header.default.primary.overlay_color
+   * - **Documentation**: https://prismic.io/docs/field#color
+   */
+  overlay_color: prismic.ColorField;
+
+  /**
+   * Overlay Opacity field in *Parallax → Default → Primary*
+   *
+   * - **Field Type**: Select
+   * - **Placeholder**: *None*
+   * - **API ID Path**: page_header.default.primary.overlay_opacity
+   * - **Documentation**: https://prismic.io/docs/field#select
+   */
+  overlay_opacity: prismic.SelectField<
+    "100" | "90" | "80" | "70" | "60" | "50" | "40" | "30" | "20" | "10"
+  >;
+}
+
+/**
+ * Default variation for Parallax Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: Default
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type PageHeaderSliceDefault = prismic.SharedSliceVariation<
+  "default",
+  Simplify<PageHeaderSliceDefaultPrimary>,
+  never
+>;
+
+/**
+ * Slice variation for *Parallax*
+ */
+type PageHeaderSliceVariation = PageHeaderSliceDefault;
+
+/**
+ * Parallax Shared Slice
+ *
+ * - **API ID**: `page_header`
+ * - **Description**: PageHeader
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type PageHeaderSlice = prismic.SharedSlice<
+  "page_header",
+  PageHeaderSliceVariation
+>;
+
 declare module "@prismicio/client" {
   interface CreateClient {
     (
@@ -675,6 +807,10 @@ declare module "@prismicio/client" {
       HeroSliceDefaultPrimary,
       HeroSliceVariation,
       HeroSliceDefault,
+      PageHeaderSlice,
+      PageHeaderSliceDefaultPrimary,
+      PageHeaderSliceVariation,
+      PageHeaderSliceDefault,
     };
   }
 }

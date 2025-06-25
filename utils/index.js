@@ -63,3 +63,22 @@ export async function getLocales(
     };
   });
 }
+
+export function getButtonVariant(variant) {
+  switch (variant) {
+    case "Primary":
+      return "btn-primary";
+    case "Secondary":
+      return "btn-secondary";
+    case "Primary Outline":
+      return "btn-primary-outline";
+    case "Primary White Outline":
+      return "btn-primary-white";
+    case "Link":
+      return "btn-link";
+    case "Link White":
+      return "btn-link-white";
+    default:
+      return "btn-primary";
+  }
+}

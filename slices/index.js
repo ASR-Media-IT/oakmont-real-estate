@@ -5,4 +5,5 @@ import dynamic from "next/dynamic";
 export const components = {
   call_to_action_with_image: dynamic(() => import("./CallToActionWithImage")),
   hero: dynamic(() => import("./Hero")),
+  page_header: dynamic(() => import("./Parallax")),
 };

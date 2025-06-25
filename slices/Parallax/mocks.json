@@ -1,0 +1,72 @@
+[
+	{
+		"__TYPE__": "SharedSliceContent",
+		"variation": "default",
+		"primary": {
+			"title": {
+				"__TYPE__": "FieldContent",
+				"value": "terrible",
+				"type": "Text"
+			},
+			"body": {
+				"__TYPE__": "FieldContent",
+				"value": "those",
+				"type": "Text"
+			},
+			"background_image": {
+				"origin": {
+					"id": "main",
+					"url": "https://images.unsplash.com/photo-1596195689404-24d8a8d1c6ea",
+					"width": 5000,
+					"height": 4613
+				},
+				"url": "https://images.unsplash.com/photo-1596195689404-24d8a8d1c6ea",
+				"width": 5000,
+				"height": 4613,
+				"edit": {
+					"zoom": 1,
+					"crop": {
+						"x": 0,
+						"y": 0
+					},
+					"background": "transparent"
+				},
+				"credits": null,
+				"alt": null,
+				"__TYPE__": "ImageContent",
+				"thumbnails": {}
+			},
+			"primary_cta": {
+				"key": "b1507d60-e933-4320-9a91-da37cba80b15",
+				"__TYPE__": "LinkContent",
+				"value": {
+					"__TYPE__": "ExternalLink",
+					"url": "https://prismic.io",
+					"text": "member",
+					"variant": "Secondary"
+				}
+			},
+			"secondary_cta": {
+				"__TYPE__": "LinkContent",
+				"key": "8abddbff-686d-4a89-a4a1-a728c8118bb1",
+				"value": {
+					"__TYPE__": "ExternalLink",
+					"url": "http://google.com",
+					"text": "minute",
+					"variant": "Primary Outline"
+				}
+			},
+			"overlay_color": {
+				"__TYPE__": "FieldContent",
+				"value": "#159c28",
+				"type": "Color"
+			},
+			"overlay_opacity": {
+				"__TYPE__": "FieldContent",
+				"value": "70",
+				"type": "Select"
+			}
+		},
+		"items": []
+	}
+]
