@@ -379,6 +379,17 @@ export interface CallToActionWithImageSliceDefaultPrimary {
    * - **Documentation**: https://prismic.io/docs/field#image
    */
   image: prismic.ImageField<never>;
+
+  /**
+   * Gray Background field in *CallToActionWithImage → Default → Primary*
+   *
+   * - **Field Type**: Boolean
+   * - **Placeholder**: *None*
+   * - **Default Value**: false
+   * - **API ID Path**: call_to_action_with_image.default.primary.gray_background
+   * - **Documentation**: https://prismic.io/docs/field#boolean
+   */
+  gray_background: prismic.BooleanField;
 }
 
 /**

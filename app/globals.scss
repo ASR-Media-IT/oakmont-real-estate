@@ -1,6 +1,5 @@
 @import "tailwindcss";
 
-
 @theme {
   --color-primary: oklch(73.653% 0.14043 251.6);
   --color-primary-50: oklch(100% 0 none);
@@ -21,28 +20,33 @@
 }
 
 .font-oswald {
-  font-family: 'Oswald', sans-serif;
+  font-family: "Oswald", sans-serif;
 }
 
 h1 {
-  font-size: 5rem; // text-4xl
+  font-size: 4.4rem; // text-4xl
   margin-bottom: 0.75rem; // mb-3
-  font-family: 'Oswald';
-  @media (min-width: 1024px) {
-    font-size: 5rem; // lg:text-5xl
+  font-family: "Oswald";
+  text-align: center;
+  line-height: 52px;
+  @media (max-width: 1024px) {
+    font-size: 2.8rem;
   }
   font-weight: 400; // font-bold
   color: #1a202c; // text-grayTrue-800
 }
 
 h2 {
-  font-size: 1.875rem; // text-3xl
-  margin-bottom: 0.75rem; // mb-3
-  @media (min-width: 1024px) {
-    font-size: 2.25rem; // lg:text-4xl
-  }
-  font-weight: 700; // font-bold
+  font-family: Oswald;
+  text-transform: capitalize;
+  font-size: 60px;
+  line-height: 70px;
+  font-weight: 400;
   color: #1a202c; // text-grayTrue-800
+  @media (max-width: 1024px) {
+    font-size: 45px;
+    line-height: 52.5px;
+  }
 }
 
 h3 {
@@ -67,7 +71,7 @@ p {
   position: relative;
   overflow: hidden;
   color: #fff;
-  background-color: #62AEFF; // bg-primary-600
+  background-color: #62aeff; // bg-primary-600
   box-shadow: 0 1px 2px 0 rgb(0 0 0 / 0.05); // shadow-sm
   cursor: pointer;
   width: fit-content;
@@ -79,12 +83,12 @@ p {
   outline: none;
   &:hover {
     color: #fff;
-    background-color: #8BC3FF; // hover:bg-primary-500
+    background-color: #8bc3ff; // hover:bg-primary-500
     transform: scale(1.05);
     box-shadow: 0 10px 15px -3px rgb(37 99 235 / 0.2); // hover:shadow-xl
   }
   &:focus-visible {
-    outline: 2px solid #62AEFF;
+    outline: 2px solid #62aeff;
     outline-offset: 2px;
   }
 }
@@ -95,9 +99,9 @@ p {
   position: relative;
   overflow: hidden;
   color: #000;
-  font-family: 'Oswald', sans-serif;
+  font-family: "Oswald", sans-serif;
   background-color: transparent;
-  border: 2px solid rgba(0,0,0,0.4);
+  border: 2px solid rgba(0, 0, 0, 0.4);
   box-shadow: 0 1px 2px 0 rgb(0 0 0 / 0.05); // shadow-sm
   cursor: pointer;
   width: fit-content;
@@ -109,12 +113,12 @@ p {
   outline: none;
   &:hover {
     color: #fff;
-    background-color: #62AEFF; // hover:bg-primary-600
+    background-color: #62aeff; // hover:bg-primary-600
     transform: scale(1.05);
     box-shadow: 0 10px 15px -3px rgb(37 99 235 / 0.2); // hover:shadow-xl
   }
   &:focus-visible {
-    outline: 2px solid #62AEFF;
+    outline: 2px solid #62aeff;
     outline-offset: 2px;
   }
 }
@@ -124,8 +128,8 @@ p {
   text-transform: capitalize;
   position: relative;
   overflow: hidden;
-  color: #62AEFF; // text-secondary-600
-  border: 1px solid #62AEFF; // border-secondary-600
+  color: #62aeff; // text-secondary-600
+  border: 1px solid #62aeff; // border-secondary-600
   box-shadow: 0 1px 2px 0 rgb(0 0 0 / 0.05); // shadow-sm
   cursor: pointer;
   width: fit-content;
@@ -136,13 +140,13 @@ p {
   font-weight: 600; // font-semibold
   outline: none;
   &:hover {
-    color: #8BC3FF; // hover:text-secondary-500
-    border-color: #8BC3FF; // hover:border-secondary-500
+    color: #8bc3ff; // hover:text-secondary-500
+    border-color: #8bc3ff; // hover:border-secondary-500
     transform: scale(1.05);
     box-shadow: 0 10px 15px -3px rgb(37 99 235 / 0.2); // hover:shadow-xl
   }
   &:focus-visible {
-    outline: 2px solid #62AEFF;
+    outline: 2px solid #62aeff;
     outline-offset: 2px;
   }
 }
@@ -190,7 +194,7 @@ p {
     bottom: -0.25rem; // -bottom-1
     width: 0%;
     height: 0.125rem; // h-0.5
-    background: #62AEFF; // bg-gray-900
+    background: #62aeff; // bg-gray-900
     transition: width 1s cubic-bezier(0.4, 0, 0.2, 1);
   }
 }
@@ -235,7 +239,7 @@ p {
     bottom: -0.25rem; // -bottom-1
     width: 0%;
     height: 0.125rem; // h-0.5
-    background: #62AEFF; // bg-gray-900
+    background: #62aeff; // bg-gray-900
     transition: width 1s cubic-bezier(0.4, 0, 0.2, 1);
   }
 }

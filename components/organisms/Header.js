@@ -4,7 +4,7 @@ import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/outline";
 import { PrismicNextImage, PrismicNextLink } from "@prismicio/next";
 import { Menu, Transition } from "@headlessui/react";
 import { Fragment, useEffect, useRef, useState } from "react";
-import { ChevronDownIcon } from "@heroicons/react/20/solid";
+// import { ChevronDownIcon } from "@heroicons/react/20/solid";
 
 export default function SiteHeader({ header }) {
   // Mobile menu state
@@ -16,7 +16,7 @@ export default function SiteHeader({ header }) {
         {/* Logo */}
         <Link
           href="/"
-          className="relative flex items-center justify-center w-32 h-10"
+          className="relative flex items-center justify-start w-32 h-10"
         >
           <PrismicNextImage
             className="object-contain w-24"
@@ -28,13 +28,13 @@ export default function SiteHeader({ header }) {
           {header.data.menu_item.map((item, index) => {
             if (item.title) {
               return (
-                <li className="flex items-center justify-center" key={index}>
+                <li className="flex items-center justify-start" key={index}>
                   <DropDownMenu menu={item} />
                 </li>
               );
             } else {
               return (
-                <li className="flex items-center justify-center" key={index}>
+                <li className="flex items-center justify-start" key={index}>
                   <PrismicNextLink
                     className="!text-2xl font-oswald !text-black !font-light group btn-link"
                     field={item.url[0]}
@@ -70,7 +70,7 @@ export default function SiteHeader({ header }) {
         </button>
         {/* Mobile Menu: Only visible on Mobile when open */}
         <div
-          className={`fixed flex-col shadow-md inset-y-0 right-0 z-10 w-1/2 overflow-y-auto bg-primary-600 px-4 py-6 pt-0 ring-1 ring-gray-900/10 duration-500 ${mobileMenuOpen ? "flex translate-x-0 lg:hidden" : "translate-x-full"}`}
+          className={`fixed flex-col shadow-md inset-y-0 right-0 z-10 w-3/4 overflow-y-auto bg-primary-600 px-4 py-6 pt-0 ring-1 ring-gray-900/10 duration-500 ${mobileMenuOpen ? "flex translate-x-0 lg:hidden" : "translate-x-full"}`}
         >
           <div className="flex flex-row justify-between w-full py-10">
             <button
@@ -88,28 +88,28 @@ export default function SiteHeader({ header }) {
           </div>
           <ol className="flex flex-col w-full gap-8 items-start">
             {header.data.menu_item.map((item, index) => {
-              if (item.title) {
-                return (
-                  <li
-                    className="flex items-center justify-center"
-                    key={item.index}
-                  >
-                    <DropDownMenu menu={item} />
-                  </li>
-                );
-              } else {
-                return (
-                  <li
-                    className="flex items-center justify-center"
-                    key={item.index}
-                  >
-                    <PrismicNextLink
-                      className="!text-2xl font-oswald !text-white !font-light group btn-link"
-                      field={item.url[0]}
-                    ></PrismicNextLink>
-                  </li>
-                );
-              }
+              return (
+                <div className="w-full" key={index}>
+                  {item.title ? (
+                    <li
+                      className="flex items-center justify-start w-full"
+                      key={index}
+                    >
+                      <DropDownMenu menu={item} />
+                    </li>
+                  ) : (
+                    <li
+                      className="flex items-center justify-start"
+                      key={index}
+                    >
+                      <PrismicNextLink
+                        className="!text-2xl font-oswald !text-white !font-light group btn-link"
+                        field={item.url[0]}
+                      ></PrismicNextLink>
+                    </li>
+                  )}
+                </div>
+              );
             })}
             {header.data.cta_item.map((item, index) => {
               return (
@@ -132,15 +132,15 @@ export default function SiteHeader({ header }) {
 
 function DropDownMenu({ menu }) {
   return (
-    <div className="">
+    <div className="w-full">
       <Menu as="div" className="relative block text-left">
         <div>
           <Menu.Button className="flex flex-row !text-2xl font-oswald !text-white lg:!text-black !font-light btn-link-menu">
             {menu.title}
-            <ChevronDownIcon
+            {/* <ChevronDownIcon
               className="w-5 h-5 ml-2 -mr-1 mt-1"
               aria-hidden="true"
-            />
+            /> */}
           </Menu.Button>
         </div>
         <Transition
@@ -153,7 +153,7 @@ function DropDownMenu({ menu }) {
           leaveTo="transform opacity-0 scale-95"
         >
           <Menu.Items className="mt-2 z-50 origin-top-right bg-white divide-y divide-gray-100 shadow-lg lg:absolute lg:right-0 lg:w-56 ring-1 ring-black/5 focus:outline-none">
-            <div className="px-1 py-1">
+            <div className="px-1 py-1 w-full">
               {menu.url.map((item, index) => {
                 return (
                   <Menu.Item key={index}>

@@ -33,6 +33,15 @@
             "constraint": {},
             "thumbnails": []
           }
+        },
+        "gray_background": {
+          "type": "Boolean",
+          "config": {
+            "label": "Gray Background",
+            "placeholder_false": "false",
+            "placeholder_true": "true",
+            "default_value": false
+          }
         }
       },
       "items": {
