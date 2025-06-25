@@ -23,7 +23,9 @@
               "config": {
                 "label": "URL",
                 "placeholder": "",
-                "select": null
+                "select": null,
+                "allowText": true,
+                "repeat": true
               }
             }
           }

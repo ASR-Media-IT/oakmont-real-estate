@@ -735,7 +735,7 @@ module.exports = {
       },
       fontFamily: {
         sans: [
-          ["Inter", "sans-serif"],
+          ["Open Sans", "sans-serif"],
           "ui-sans-serif",
           "system-ui",
           "-apple-system",
@@ -751,6 +751,8 @@ module.exports = {
           '"Segoe UI Symbol"',
           '"Noto Color Emoji"',
         ],
+        oswald: ['Oswald', 'sans-serif'],
+        openSans: ['var(--font-open-sans)', 'sans-serif'],
         serif: [
           "ui-serif",
           "Georgia",

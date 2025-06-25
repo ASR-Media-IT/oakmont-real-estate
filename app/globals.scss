@@ -1,7 +1,27 @@
 @import "tailwindcss";
 
+
+@theme {
+  --color-primary: oklch(73.653% 0.14043 251.6);
+  --color-primary-50: oklch(100% 0 none);
+  --color-primary-100: oklch(100% 0 none);
+  --color-primary-200: oklch(100% 0 none);
+  --color-primary-300: oklch(93.892% 0.03042 249.69);
+  --color-primary-400: oklch(86.937% 0.06647 250.65);
+  --color-primary-500: oklch(80.124% 0.10371 250.88);
+  --color-primary-600: oklch(73.653% 0.14043 251.6);
+  --color-primary-700: oklch(65.625% 0.18688 254);
+  --color-primary-800: oklch(58.185% 0.20618 256.96);
+  --color-primary-900: oklch(47.886% 0.16814 256.73);
+  --color-primary-950: oklch(42.756% 0.14706 256.2);
+}
+
 * {
   scroll-behavior: smooth;
+}
+
+.font-oswald {
+  font-family: 'Oswald', sans-serif;
 }
 
 h1 {
@@ -60,6 +80,36 @@ p {
   &:hover {
     color: #fff;
     background-color: #8BC3FF; // hover:bg-primary-500
+    transform: scale(1.05);
+    box-shadow: 0 10px 15px -3px rgb(37 99 235 / 0.2); // hover:shadow-xl
+  }
+  &:focus-visible {
+    outline: 2px solid #62AEFF;
+    outline-offset: 2px;
+  }
+}
+
+.btn-primary-outline {
+  display: block;
+  text-transform: capitalize;
+  position: relative;
+  overflow: hidden;
+  color: #000;
+  font-family: 'Oswald', sans-serif;
+  background-color: transparent;
+  border: 2px solid rgba(0,0,0,0.4);
+  box-shadow: 0 1px 2px 0 rgb(0 0 0 / 0.05); // shadow-sm
+  cursor: pointer;
+  width: fit-content;
+  transition: all 0.3s ease-in-out;
+  padding: 0.2rem 0.875rem; // py-3 px-3.5
+  text-align: center;
+  font-size: 1.5rem;
+  font-weight: 300; // font-semibold
+  outline: none;
+  &:hover {
+    color: #fff;
+    background-color: #62AEFF; // hover:bg-primary-600
     transform: scale(1.05);
     box-shadow: 0 10px 15px -3px rgb(37 99 235 / 0.2); // hover:shadow-xl
   }
