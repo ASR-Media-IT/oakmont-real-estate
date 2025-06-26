@@ -65,6 +65,18 @@ p {
   margin-bottom: 1.25rem; // mb-5
 }
 
+.prismic-rich-text-light {
+  * {
+    color: #fff !important;
+  }
+}
+
+/* .prismic-rich-text-dark {
+  * {
+    color: #374151 !important;
+  }
+} */
+
 .btn-primary {
   display: block;
   text-transform: capitalize;

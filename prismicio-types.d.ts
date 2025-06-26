@@ -107,6 +107,7 @@ export type FooterMenuDocument<Lang extends string = string> =
   >;
 
 type HomePageDocumentDataSlicesSlice =
+  | TextWithBackgroundSlice
   | PageHeaderSlice
   | HeroSlice
   | CallToActionWithImageSlice;
@@ -174,7 +175,11 @@ export type HomePageDocument<Lang extends string = string> =
     Lang
   >;
 
-type PageDocumentDataSlicesSlice = CallToActionWithImageSlice;
+type PageDocumentDataSlicesSlice =
+  | TextWithBackgroundSlice
+  | PageHeaderSlice
+  | HeroSlice
+  | CallToActionWithImageSlice;
 
 /**
  * Content for Page documents
@@ -771,6 +776,112 @@ export type PageHeaderSlice = prismic.SharedSlice<
   PageHeaderSliceVariation
 >;
 
+/**
+ * Primary content in *TextWithBackground → Default → Primary*
+ */
+export interface TextWithBackgroundSliceDefaultPrimary {
+  /**
+   * Header field in *TextWithBackground → Default → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: text_with_background.default.primary.header
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  header: prismic.KeyTextField;
+
+  /**
+   * Subheader field in *TextWithBackground → Default → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: text_with_background.default.primary.subheader
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  subheader: prismic.KeyTextField;
+
+  /**
+   * Background Color field in *TextWithBackground → Default → Primary*
+   *
+   * - **Field Type**: Color
+   * - **Placeholder**: *None*
+   * - **API ID Path**: text_with_background.default.primary.background_color
+   * - **Documentation**: https://prismic.io/docs/field#color
+   */
+  background_color: prismic.ColorField;
+
+  /**
+   * Text Theme field in *TextWithBackground → Default → Primary*
+   *
+   * - **Field Type**: Select
+   * - **Placeholder**: *None*
+   * - **API ID Path**: text_with_background.default.primary.text_theme
+   * - **Documentation**: https://prismic.io/docs/field#select
+   */
+  text_theme: prismic.SelectField<"Dark" | "Light">;
+
+  /**
+   * Body field in *TextWithBackground → Default → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: text_with_background.default.primary.body
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  body: prismic.RichTextField;
+
+  /**
+   * Primary CTA field in *TextWithBackground → Default → Primary*
+   *
+   * - **Field Type**: Link
+   * - **Placeholder**: *None*
+   * - **API ID Path**: text_with_background.default.primary.primary_cta
+   * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
+   */
+  primary_cta: prismic.LinkField<
+    string,
+    string,
+    unknown,
+    prismic.FieldState,
+    | "Primary"
+    | "Secondary"
+    | "Primary Outline"
+    | "Primary White Outline"
+    | "Link"
+    | "Link White"
+  >;
+}
+
+/**
+ * Default variation for TextWithBackground Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: Default
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type TextWithBackgroundSliceDefault = prismic.SharedSliceVariation<
+  "default",
+  Simplify<TextWithBackgroundSliceDefaultPrimary>,
+  never
+>;
+
+/**
+ * Slice variation for *TextWithBackground*
+ */
+type TextWithBackgroundSliceVariation = TextWithBackgroundSliceDefault;
+
+/**
+ * TextWithBackground Shared Slice
+ *
+ * - **API ID**: `text_with_background`
+ * - **Description**: TextWithBackground
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type TextWithBackgroundSlice = prismic.SharedSlice<
+  "text_with_background",
+  TextWithBackgroundSliceVariation
+>;
+
 declare module "@prismicio/client" {
   interface CreateClient {
     (
@@ -822,6 +933,10 @@ declare module "@prismicio/client" {
       PageHeaderSliceDefaultPrimary,
       PageHeaderSliceVariation,
       PageHeaderSliceDefault,
+      TextWithBackgroundSlice,
+      TextWithBackgroundSliceDefaultPrimary,
+      TextWithBackgroundSliceVariation,
+      TextWithBackgroundSliceDefault,
     };
   }
 }

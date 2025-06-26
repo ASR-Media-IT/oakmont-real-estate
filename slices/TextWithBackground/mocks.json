@@ -1,0 +1,50 @@
+[
+	{
+		"__TYPE__": "SharedSliceContent",
+		"variation": "default",
+		"primary": {
+			"header": {
+				"__TYPE__": "FieldContent",
+				"value": "stage",
+				"type": "Text"
+			},
+			"subheader": {
+				"__TYPE__": "FieldContent",
+				"value": "send",
+				"type": "Text"
+			},
+			"background_color": {
+				"__TYPE__": "FieldContent",
+				"value": "#9c37e4",
+				"type": "Color"
+			},
+			"text_theme": {
+				"__TYPE__": "FieldContent",
+				"value": "Dark",
+				"type": "Select"
+			},
+			"body": {
+				"__TYPE__": "StructuredTextContent",
+				"value": [
+					{
+						"type": "paragraph",
+						"content": {
+							"text": "Proident minim cupidatat excepteur dolor laborum deserunt ad."
+						}
+					}
+				]
+			},
+			"primary_cta": {
+				"__TYPE__": "LinkContent",
+				"key": "ae3a499a-840c-4b21-81a2-cd1fbe02658d",
+				"value": {
+					"__TYPE__": "ExternalLink",
+					"url": "http://google.com",
+					"text": "camp",
+					"variant": "Link White"
+				}
+			}
+		},
+		"items": []
+	}
+]
