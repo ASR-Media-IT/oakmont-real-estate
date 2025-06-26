@@ -47,8 +47,8 @@
 				}
 			},
 			"secondary_cta": {
-				"__TYPE__": "LinkContent",
 				"key": "8abddbff-686d-4a89-a4a1-a728c8118bb1",
+				"__TYPE__": "LinkContent",
 				"value": {
 					"__TYPE__": "ExternalLink",
 					"url": "http://google.com",

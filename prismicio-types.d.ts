@@ -472,6 +472,17 @@ export interface CallToActionWithImageSliceFlippedPrimary {
    * - **Documentation**: https://prismic.io/docs/field#image
    */
   image: prismic.ImageField<never>;
+
+  /**
+   * Gray Background field in *CallToActionWithImage → Flipped → Primary*
+   *
+   * - **Field Type**: Boolean
+   * - **Placeholder**: *None*
+   * - **Default Value**: false
+   * - **API ID Path**: call_to_action_with_image.flipped.primary.gray_background
+   * - **Documentation**: https://prismic.io/docs/field#boolean
+   */
+  gray_background: prismic.BooleanField;
 }
 
 /**
