@@ -17,10 +17,10 @@ const TextWithBackground = ({ slice }) => {
         data-slice-variation={slice.variation}
         className={`flex flex-col items-center justify-center py-20 text-center`}
       >
-        <h6 className="max-w-xl text-md md:text-xl mb-5 text-white">
+        <h6 className={`max-w-xl text-md md:text-xl mb-5 ${slice.primary.text_theme === "Light" && '!text-white'}`}>
           {slice.primary.subheader}
         </h6>
-        <h2 className="relative mb-5 !text-white text-2xl text-white uppercase lg:text-3xl">
+        <h2 className={`relative mb-5 text-2xl text-white uppercase lg:text-3xl ${slice.primary.text_theme === "Light" && '!text-white'}`}>
           {slice.primary.header}
         </h2>
         <div className={`${slice.primary.text_theme === "Light" && 'prismic-rich-text-light'} max-w-3xl`}>
