@@ -107,6 +107,7 @@ export type FooterMenuDocument<Lang extends string = string> =
   >;
 
 type HomePageDocumentDataSlicesSlice =
+  | IconsSlice
   | TextWithBackgroundSlice
   | PageHeaderSlice
   | HeroSlice
@@ -176,6 +177,7 @@ export type HomePageDocument<Lang extends string = string> =
   >;
 
 type PageDocumentDataSlicesSlice =
+  | IconsSlice
   | TextWithBackgroundSlice
   | PageHeaderSlice
   | HeroSlice
@@ -648,6 +650,83 @@ type HeroSliceVariation = HeroSliceDefault;
 export type HeroSlice = prismic.SharedSlice<"hero", HeroSliceVariation>;
 
 /**
+ * Item in *Icons → Default → Primary → Items*
+ */
+export interface IconsSliceDefaultPrimaryItemsItem {
+  /**
+   * Title field in *Icons → Default → Primary → Items*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: icons.default.primary.items[].title
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  title: prismic.KeyTextField;
+
+  /**
+   * Image field in *Icons → Default → Primary → Items*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: icons.default.primary.items[].image
+   * - **Documentation**: https://prismic.io/docs/field#image
+   */
+  image: prismic.ImageField<never>;
+}
+
+/**
+ * Primary content in *Icons → Default → Primary*
+ */
+export interface IconsSliceDefaultPrimary {
+  /**
+   * Title field in *Icons → Default → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: icons.default.primary.title
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  title: prismic.KeyTextField;
+
+  /**
+   * Items field in *Icons → Default → Primary*
+   *
+   * - **Field Type**: Group
+   * - **Placeholder**: *None*
+   * - **API ID Path**: icons.default.primary.items[]
+   * - **Documentation**: https://prismic.io/docs/field#group
+   */
+  items: prismic.GroupField<Simplify<IconsSliceDefaultPrimaryItemsItem>>;
+}
+
+/**
+ * Default variation for Icons Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: Default
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type IconsSliceDefault = prismic.SharedSliceVariation<
+  "default",
+  Simplify<IconsSliceDefaultPrimary>,
+  never
+>;
+
+/**
+ * Slice variation for *Icons*
+ */
+type IconsSliceVariation = IconsSliceDefault;
+
+/**
+ * Icons Shared Slice
+ *
+ * - **API ID**: `icons`
+ * - **Description**: Icons
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type IconsSlice = prismic.SharedSlice<"icons", IconsSliceVariation>;
+
+/**
  * Primary content in *Parallax → Default → Primary*
  */
 export interface PageHeaderSliceDefaultPrimary {
@@ -929,6 +1008,11 @@ declare module "@prismicio/client" {
       HeroSliceDefaultPrimary,
       HeroSliceVariation,
       HeroSliceDefault,
+      IconsSlice,
+      IconsSliceDefaultPrimaryItemsItem,
+      IconsSliceDefaultPrimary,
+      IconsSliceVariation,
+      IconsSliceDefault,
       PageHeaderSlice,
       PageHeaderSliceDefaultPrimary,
       PageHeaderSliceVariation,

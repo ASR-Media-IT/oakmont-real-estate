@@ -50,13 +50,17 @@ h2 {
 }
 
 h3 {
-  font-size: 1.125rem; // text-lg
+  font-family: Oswald;
+  text-transform: capitalize;
+  font-size: 38px;
+  line-height: 50px;
+  font-weight: 400;
   margin-bottom: 0.75rem; // mb-3
-  @media (min-width: 1024px) {
-    font-size: 1.25rem; // lg:text-xl
+  @media (max-width: 1024px) {
+    font-size: 32px;
+    line-height: 32px;
   }
-  font-weight: 700; // font-bold
-  color: #1a202c; // text-grayTrue-800
+  color: #292929
 }
 
 p {
